@@ -10,7 +10,6 @@ const VehicleCardWrapper = styled.div`
   .vehicle-slide-show {
     width: 35%;
     max-width: 340px;
-    height: 158px;
   }
 
   .vehicle-info {
@@ -27,6 +26,13 @@ const VehicleCardWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .availability {
+    @media (max-width: 1200px) {
+      width: 115px;
+      text-align: center;
+    }
   }
 
   .key-facts {

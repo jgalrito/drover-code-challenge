@@ -7,19 +7,22 @@ import leftArrow from './assets/left_arrow.png'
 const VehicleSlideShowWrapper = styled.div`
 	position: relative;
 
-	.slick-arrow {
+	.slide-arrow {
+		position: absolute;
 		height: 30px;
 		width: 30px;
 		z-index: 2;
-	}
+		top: 50%;
 
-	.slick-prev {
-		left: 15px;		
-	}
+		&.prev {
+			transform: translateY(-50%);
+			left: 15px;		
+		}
 
-	.slick-next {
-		transform: translateY(-50%) rotate(180deg);
-		right: 15px;	
+		&.next {
+			transform: translateY(-50%) rotate(180deg);
+			right: 15px;	
+		}
 	}
 
 	.slick-slide img {
@@ -32,6 +35,11 @@ const VehicleSlideShowWrapper = styled.div`
 	}
 `
 
+const SlideArrow = className => ({onClick}) => <img className={`slide-arrow ${className}`} alt={className} src={leftArrow} onClick={onClick}/>
+
+const PrevArrow = SlideArrow('prev')
+const NextArrow = SlideArrow('next')
+
 class VehicleSlideShow extends Component {
 	settings = {
 		infinite: true,
@@ -41,8 +49,8 @@ class VehicleSlideShow extends Component {
 		slidesToScroll: 1,
 		swipeToSlide: true,
 		centerMode: true,
-		prevArrow: <img src={leftArrow}/>,
-		nextArrow: <img src={leftArrow}/>,
+		prevArrow: <PrevArrow/>,
+		nextArrow: <NextArrow/>,
 		adaptiveHeight: this.props.adaptiveHeight || false,
 		centerPadding: '0px',
 		responsive: [{
@@ -53,7 +61,7 @@ class VehicleSlideShow extends Component {
 		}]
 	}
 
-	render() {
+	render = () => {
 		const {images} = this.props
 
 		return (
