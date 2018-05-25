@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Pagination from 'react-js-pagination'
 
 import Location from '../common/components/Location'
 import Dropdown from '../common/components/Dropdown'
 
 import VehicleCard from './VehicleCard'
 import PriceRange from './PriceRange'
+import AggregationDropdown from './AggregationDropdown'
 
-import {search} from './'
+import {search, VEHICLE_MAKES} from './'
 
 const
   SUBSCRIPTION_START_OPTIONS = [2, 14, 30],
@@ -34,7 +36,57 @@ const SearchFormWrapper = styled.div`
       margin-bottom: 15px;
     }
   }
+
+  .pagination-wrapper {
+    text-align: center;
+    color: #172B24;
+
+    .pagination {
+      justify-content: center;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        &.prev, &.next {
+          a {
+            background-color: #bef9f9;
+          }
+        }
+
+        &.active a {
+          background-color: #50ff7d;
+        }
+
+        a {
+          border: none;
+          padding: 10px;
+          text-align: center;
+          border-radius: 6px;
+          background: #ffffff;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
 `
+
+const AGGREGATION_TYPES = {
+  vehicle_make: {
+    label: 'Vehicle Make',
+    translations: VEHICLE_MAKES
+  },
+  transmission: 'Gearbox',
+  year: {
+    label: 'Year',
+    transformOptions: years => years.reverse()
+  },
+  fuel: 'Fuel Type',
+  tags: 'Car Type',
+  body_information: 'Body Type'
+}
 
 class SearchForm extends Component {
   state = {
@@ -74,7 +126,13 @@ class SearchForm extends Component {
       price_max,
       subscription_start_days,
       max_distance
-    } = searchParams
+    } = searchParams, {
+      aggregations,
+      page,
+      total_count,
+      per_page
+    } = (results && results.metadata || {}),
+      totalPages = total_count && Math.floor(total_count / per_page)
 
     return (
       <SearchFormWrapper className="row">
@@ -108,12 +166,34 @@ class SearchForm extends Component {
               onChange={([price_min, price_max]) => this.updateSearchParams({price_min, price_max})}
             />
           </div>
+          {Object.entries(AGGREGATION_TYPES).map(([key, options]) => (
+            <AggregationDropdown
+              key={key}
+              counts={aggregations && aggregations[key]}
+              options={options}
+              onChange={value => this.updateSearchParams({[key]: value})}
+            />
+          ))}
         </div>
         <div className="search-results col-12 col-lg-9">
           {loading?'Loading':(
             <ul className="result-list">
-              {results.data.map(vehicle => <li key={vehicle.id}><VehicleCard vehicle={vehicle} subscriptionDuration={number_of_months}/></li>)}
+              {results && results.data.map(vehicle => <li key={vehicle.id}><VehicleCard vehicle={vehicle} subscriptionDuration={number_of_months}/></li>)}
             </ul>
+          )}
+          {results && totalPages && totalPages > 1 && (
+            <div className="pagination-wrapper">
+              <p className="number-results">Showing {(page - 1) * per_page + 1}-{page * per_page} of {total_count} results</p>
+              <Pagination
+                activePage={page}
+                itemsCountPerPage={per_page}
+                totalItemsCount={total_count}
+                pageRangeDisplayed={4}
+                onChange={page => this.updateSearchParams({page})}
+                itemClassPrev="prev"
+                itemClassNext="next"
+              />
+            </div>
           )}
         </div>
       </SearchFormWrapper>

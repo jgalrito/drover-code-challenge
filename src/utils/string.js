@@ -1,1 +1,1 @@
-export const capitalizeWords = str => str.split(' ').map(str => str[0].toUpperCase() + str.slice(1)).join(' ')
+export const capitalize = str => str.replace(/\b\w/g, w => w.toUpperCase())

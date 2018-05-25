@@ -1,10 +1,12 @@
 import React from 'react'
 import moment from 'moment'
 
-import {capitalizeWords} from '../utils/string'
+import {capitalize} from '../utils/string'
 
 import VehicleCardWrapper from './VehicleCardWrapper'
 import VehicleSlideShow from './VehicleSlideShow'
+
+import {VEHICLE_MAKES} from './'
 
 const KEY_FACTS = {
   year: {
@@ -72,7 +74,7 @@ const VehicleCard = ({vehicle, subscriptionDuration}) => {
       <div className="vehicle-info">
         <div className="vehicle-title pl-3">
           <div className="pb-1 pt-2">
-            <h3 className="vehicle-make-brand m-0">{capitalizeWords(`${vehicle_make} ${vehicle_model} ${engine_size_information}L`)}</h3>
+            <h3 className="vehicle-make-brand m-0">{capitalize(`${VEHICLE_MAKES[vehicle_make.toLowerCase()] || vehicle_make} ${vehicle_model} ${engine_size_information}L`)}</h3>
             <span className="vehicle-location">Located in {postcode.split(' ')[0]}</span>
           </div>
           <div className="availability pr-3">
@@ -82,7 +84,7 @@ const VehicleCard = ({vehicle, subscriptionDuration}) => {
         <div className="key-facts py-1 px-2">
           <ul>
             {Object.entries(KEY_FACTS).map(([key, {icon, label}]) => {
-              label = capitalizeWords((label?label(vehicle[key]):vehicle[key]).toString())
+              label = capitalize((label?label(vehicle[key]):vehicle[key]).toString())
 
               return (
                 <li key={key} className="px-1 pb-1">
