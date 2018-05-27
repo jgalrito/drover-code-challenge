@@ -8,6 +8,7 @@ import caretDownIcon from '../../assets/icons/caret_down.svg'
 
 const DropdownWrapper = styled.div`
 	cursor: pointer;
+	display: inline-block;
 
 	.dropdown-value {
 		display: flex;
@@ -24,6 +25,7 @@ const DropdownWrapper = styled.div`
 			transform: rotate(-90deg);
 			width: 20px;
 			cursor: pointer;
+			margin-left: 10px;
 		}
 	}
 `
@@ -33,14 +35,10 @@ class DropdownBase extends Component {
 		value: this.props.value
 	}
 
-	setValue = value => {
-		this.setState({
-			value,
-			showDropdown: false
-		})
-
-		this.props.onChange(value)
-	}
+	setValue = value => this.setState({
+		value,
+		showDropdown: false
+	}, () => this.props.onChange(value))
 
 	handleClickOutside = () => this.toggleDropdown(false)
 
@@ -48,11 +46,15 @@ class DropdownBase extends Component {
 		showDropdown: typeof force === 'undefined'?!this.state.showDropdown:force
 	})
 
+	componentWillReceiveProps = ({value}) => value !== this.state.value && this.setState({value})
+
 	render = () => {
-		const {value, showDropdown} = this.state
+		const
+			{value, showDropdown} = this.state,
+			{className} = this.props
 
 		return (
-			<DropdownWrapper className="dropdown">
+			<DropdownWrapper className={`dropdown ${className || ''}`}>
 				<div className="dropdown-value" onClick={() => this.toggleDropdown()}>
 					<span>{this.props.valueLabel?this.props.valueLabel(value):value}</span>
 					<img alt="Click to toggle" src={caretDownIcon}/>

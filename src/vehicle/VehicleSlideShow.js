@@ -51,14 +51,8 @@ class VehicleSlideShow extends Component {
 		centerMode: true,
 		prevArrow: <PrevArrow/>,
 		nextArrow: <NextArrow/>,
-		adaptiveHeight: this.props.adaptiveHeight || false,
-		centerPadding: '0px',
-		responsive: [{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 1
-			}
-		}]
+		adaptiveHeight: false,
+		centerPadding: '0px'
 	}
 
 	render = () => {

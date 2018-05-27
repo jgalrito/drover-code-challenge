@@ -5,8 +5,19 @@ import {capitalize} from '../utils/string'
 
 import VehicleCardWrapper from './VehicleCardWrapper'
 import VehicleSlideShow from './VehicleSlideShow'
+import discountTag from './assets/discount_tag.png'
 
-import {VEHICLE_MAKES} from './'
+import {VEHICLE_MAKES, SUB_TYPES} from './'
+
+const PCO_KEY_FACTS = {
+  sub_type: {
+    icon: require('./assets/uber.svg'),
+    label: key => SUB_TYPES[key]
+  },
+  city_jurisdiction: {
+    icon: require('./assets/city_jurisdiction.svg')
+  }
+}
 
 const KEY_FACTS = {
   year: {
@@ -56,7 +67,7 @@ const FEATURES = {
   upholstery_cloth: "Upholstery Cloth"
 }
 
-const VehicleCard = ({vehicle, subscriptionDuration}) => {
+const VehicleCard = ({vehicle, isConsumer, totalPrice, discount}) => {
   const {
     images,
     vehicle_make,
@@ -65,16 +76,40 @@ const VehicleCard = ({vehicle, subscriptionDuration}) => {
     postcode,
     available_start_date,
     features,
-    price_discount_and_deposit_schedule_hash
-  } = vehicle
+    year,
+    fuel
+  } = vehicle,
+    vehicleMake = VEHICLE_MAKES[vehicle_make.toLowerCase()] || vehicle_make,
+    engineSize = engine_size_information && fuel !== 'electric'?` ${engine_size_information}L`:'',
+    showYear = isConsumer?'':` - ${year}`,
+    title = `${vehicleMake} ${vehicle_model}${showYear}${engineSize}`
 
- return (
+  const generateKeyFacts = keyFacts => Object.entries(keyFacts).map(([key, {icon, label}]) => {
+    if(!vehicle[key])
+      return null
+
+    label = capitalize((label?label(vehicle[key]):vehicle[key]).toString())
+
+    return (
+      <li key={key} className="px-1 pb-1">
+        <img src={icon} alt={label}/>
+        <span>{label}</span>
+      </li>
+    ) 
+  })
+
+  return (
     <VehicleCardWrapper className="vehicle-card">
-      <VehicleSlideShow images={images}/>
+      <div className="slide-show-container">
+        <VehicleSlideShow images={images}/>
+        {discount > 0 && (
+          <img alt="discount" src={discountTag}/>
+        )}
+      </div>
       <div className="vehicle-info">
         <div className="vehicle-title pl-3">
           <div className="pb-1 pt-2">
-            <h3 className="vehicle-make-brand m-0">{capitalize(`${VEHICLE_MAKES[vehicle_make.toLowerCase()] || vehicle_make} ${vehicle_model} ${engine_size_information}L`)}</h3>
+            <h3 className="vehicle-make-brand m-0">{capitalize(title)}</h3>
             <span className="vehicle-location">Located in {postcode.split(' ')[0]}</span>
           </div>
           <div className="availability pr-3">
@@ -83,16 +118,8 @@ const VehicleCard = ({vehicle, subscriptionDuration}) => {
         </div>
         <div className="key-facts py-1 px-2">
           <ul>
-            {Object.entries(KEY_FACTS).map(([key, {icon, label}]) => {
-              label = capitalize((label?label(vehicle[key]):vehicle[key]).toString())
-
-              return (
-                <li key={key} className="px-1 pb-1">
-                  <img src={icon} alt={label}/>
-                  <span>{label}</span>
-                </li>
-              ) 
-            })}
+            {!isConsumer && generateKeyFacts(PCO_KEY_FACTS)}
+            {generateKeyFacts(KEY_FACTS)}
           </ul>
         </div>
         <ul className="features py-1 px-2">
@@ -106,9 +133,15 @@ const VehicleCard = ({vehicle, subscriptionDuration}) => {
           }, []).map((content, i) => <li key={i} className="pl-1 pr-1">{content}</li>)}
         </ul>
         <div className="pricing px-2 pb-2 pt-0 p-lg-2 p-xl-2 px-xl-3">
+          {discount > 0 && (
+            <div className="discount-info">
+              <div><small className="max-price">was £{totalPrice + discount}/month</small></div>
+              <div><small>(save £{discount}/month)</small></div>
+            </div>
+          )}
           <div className="value-wrapper mr-lg-3 p-2 p-lg-0 mb-2 mb-lg-0">
             <div className="value">
-              <span className="price">£ {price_discount_and_deposit_schedule_hash[subscriptionDuration].driver_price_pounds_after_discount_including_insurance}</span>/month
+              <span className="price">£ {totalPrice}</span>/month
             </div>
             <small className="periodicity">
               (Monthly Vehicle Price inc. VAT)

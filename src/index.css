@@ -83,3 +83,14 @@ textarea:focus, input:not([type=checkbox]):not([type=radio]):focus {
 .input-group-no-conflict > label {
 	margin-bottom: .2em;
 }
+
+small {
+	font-size: 12px;
+}
+
+input[type=radio] {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #e4e4e4;
+    background-color: #ffffff
+}
