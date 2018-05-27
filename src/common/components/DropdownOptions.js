@@ -8,6 +8,7 @@ const DropdownOptions = styled.ul`
   border-radius: 6px;
   list-style: none;
   z-index: 1;
+  overflow: auto;
 
   li {
     background: #ffffff;

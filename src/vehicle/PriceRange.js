@@ -20,9 +20,7 @@ class PriceRange extends Component {
 		value: this.props.value
 	}
 
-	onChange = value => this.setState({
-		value
-	})
+	onChange = value => this.setState({value})
 
 	render = () => {
 		const

@@ -7,9 +7,17 @@ const VehicleCardWrapper = styled.div`
   display: flex;
   overflow: hidden;
 
-  .vehicle-slide-show {
+  .slide-show-container {
     width: 35%;
     max-width: 340px;
+    position: relative;
+
+    & > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 92px;
+    }
   }
 
   .vehicle-info {
@@ -38,6 +46,7 @@ const VehicleCardWrapper = styled.div`
   .key-facts {
     font-weight: bold;
     height: 57px;
+    overflow: hidden;
 
     ul > li {
       width: 25%;
@@ -75,6 +84,16 @@ const VehicleCardWrapper = styled.div`
     flex: 1;
     align-items: center;
     justify-content: flex-end;
+
+    .discount-info {
+      flex: 1;
+
+      .max-price {
+        color: #fe3030;
+        text-decoration: line-through;
+        font-size: 13px;
+      }
+    }
 
     .value-wrapper {
       text-align: right;
