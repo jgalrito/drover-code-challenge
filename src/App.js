@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import thunk from 'redux-thunk'
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import {Provider} from 'react-redux'
 
-import SearchForm from './vehicle/SearchForm';
+import SearchForm from './vehicle/SearchForm'
+import vehicle from './vehicle/reducer'
+
+const store = createStore(combineReducers({
+  vehicle
+}), applyMiddleware(thunk))
 
 class App extends Component {
   render() {
     return (
-      <div className="container py-3">
+      <Provider store={store}>
         <SearchForm/>
-      </div>
+      </Provider>
     );
   }
 }
 
-export default App;
+export default App

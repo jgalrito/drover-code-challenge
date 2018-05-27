@@ -61,3 +61,24 @@ export const SUB_TYPES = {
   uberx: 'Uber X',
   uberxl: 'Uber XL'
 }
+
+export const SUBSCRIPTION_START_OPTIONS = {
+  consumer: [2, 14, 30],
+  PCO: [2, 7]
+}
+
+export const SORTING_OPTIONS = [{
+  order_by: 'price',
+  order_direction: 'asc',
+  label: 'Price - Low To High'
+}, {
+  order_by: 'price',
+  order_direction: 'desc',
+  label: 'Price - High To Low'
+}, {
+  order_by: 'distance',
+  order_direction: 'asc',
+  label: 'Distance - Close To Far'
+}]
+
+export const DISTANCE_OPTIONS = [25, 50, 75, 100, 150, 200]

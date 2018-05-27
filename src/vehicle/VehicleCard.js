@@ -3,6 +3,8 @@ import moment from 'moment'
 
 import {capitalize} from '../utils/string'
 
+import Button from '../common/components/Button'
+
 import VehicleCardWrapper from './VehicleCardWrapper'
 import VehicleSlideShow from './VehicleSlideShow'
 import discountTag from './assets/discount_tag.png'
@@ -106,7 +108,7 @@ const VehicleCard = ({vehicle, isConsumer, totalPrice, discount}) => {
           <img alt="discount" src={discountTag}/>
         )}
       </div>
-      <div className="vehicle-info">
+      <div className="vehicle-info p-1 p-lg-0">
         <div className="vehicle-title pl-3">
           <div className="pb-1 pt-2">
             <h3 className="vehicle-make-brand m-0">{capitalize(title)}</h3>
@@ -140,14 +142,15 @@ const VehicleCard = ({vehicle, isConsumer, totalPrice, discount}) => {
             </div>
           )}
           <div className="value-wrapper mr-lg-3 p-2 p-lg-0 mb-2 mb-lg-0">
+            {discount > 0 && <small className="max-price">£{totalPrice + discount}</small>}
             <div className="value">
-              <span className="price">£ {totalPrice}</span>/month
+              <span className="price text-xl-right">£ {totalPrice}</span>/month
             </div>
             <small className="periodicity">
               (Monthly Vehicle Price inc. VAT)
             </small>
           </div>
-          <button>See more details</button>
+          <Button>See more details</Button>
         </div>
       </div>
     </VehicleCardWrapper>

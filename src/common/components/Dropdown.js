@@ -4,7 +4,7 @@ import onClickOutside from 'react-onclickoutside'
 
 import DropdownOptions from './DropdownOptions'
 
-import caretDownIcon from '../../assets/icons/caret_down.svg'
+import CaretIcon from '../../common/components/CaretIcon'
 
 const DropdownWrapper = styled.div`
 	cursor: pointer;
@@ -21,7 +21,7 @@ const DropdownWrapper = styled.div`
 	    background-color: white;
 	    align-items: center;
 
-		img {
+		svg {
 			transform: rotate(-90deg);
 			width: 20px;
 			cursor: pointer;
@@ -57,7 +57,7 @@ class DropdownBase extends Component {
 			<DropdownWrapper className={`dropdown ${className || ''}`}>
 				<div className="dropdown-value" onClick={() => this.toggleDropdown()}>
 					<span>{this.props.valueLabel?this.props.valueLabel(value):value}</span>
-					<img alt="Click to toggle" src={caretDownIcon}/>
+					<CaretIcon/>
 				</div>
 				{showDropdown && (
 					<DropdownOptions>

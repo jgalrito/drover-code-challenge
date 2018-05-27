@@ -2,15 +2,25 @@ import styled from 'styled-components'
 
 const VehicleCardWrapper = styled.div`
   border-radius: 6px;
-  background-color: white;
   border: 1px solid #efefef;
-  display: flex;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
 
   .slide-show-container {
-    width: 35%;
-    max-width: 340px;
+    height: 400px;
+    width: 100%;
     position: relative;
+
+    @media (min-width: 992px) {
+      width: 35%;
+      max-width: 340px;
+      height: 158px;
+    }
 
     & > img {
       position: absolute;
@@ -24,6 +34,8 @@ const VehicleCardWrapper = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    background-color: white;
 
     & > :not(:last-child):not(.features) {
       border-bottom: 1px solid #efefef;
@@ -49,7 +61,11 @@ const VehicleCardWrapper = styled.div`
     overflow: hidden;
 
     ul > li {
-      width: 25%;
+      width: calc(100% / 3);
+
+      @media (min-width: 992px) {
+        width: 25%;        
+      }
 
       img {
         width: 22px;
@@ -64,7 +80,10 @@ const VehicleCardWrapper = styled.div`
 
   .features {
     color: #7d807c;
-    height: 44px;
+
+    @media (min-width) {
+      height: 44px;      
+    }
   }
 
   .key-facts > ul, .features {
@@ -79,25 +98,43 @@ const VehicleCardWrapper = styled.div`
   }
 
   .pricing {
-    display: flex;
-    background-color: #bef9f9;
     flex: 1;
-    align-items: center;
-    justify-content: flex-end;
 
-    .discount-info {
+    @media (min-width: 992px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: #bef9f9;
+    }
+
+    & > .discount-info {
+      display: none;
       flex: 1;
 
-      .max-price {
-        color: #fe3030;
-        text-decoration: line-through;
-        font-size: 13px;
+      @media (min-width: 991px) {
+        display: block;
       }
     }
 
+    .max-price {
+      color: #fe3030;
+      text-decoration: line-through;
+      font-size: 13px;
+    }
+
     .value-wrapper {
-      text-align: right;
-      line-height: 1;
+      background-color: #bef9f9;
+      border-radius: 6px;
+
+      .max-price {
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+
+      .value {
+        line-height: 1;
+      }
 
       .price {
         font-weight: bold;
@@ -106,9 +143,15 @@ const VehicleCardWrapper = styled.div`
     }
 
     button {
-      font-weight: bold;
-      border-color: #5dcb7f;
-      background-color: #50ff7d;
+      width: 100%;
+
+      @media (min-width: 992px) {
+        width: auto;
+      }
+
+      @media (max-width: 1199px) {
+        padding: 5px;
+      }
     }
   }
 `

@@ -9,11 +9,14 @@
     "react-dom": "^16.3.2",
     "react-js-pagination": "^3.0.2",
     "react-onclickoutside": "^6.7.1",
+    "react-redux": "^5.0.7",
     "react-slick": "^0.23.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "react-scripts": "1.1.4"
+    "react-scripts": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
