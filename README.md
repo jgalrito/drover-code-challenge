@@ -24,6 +24,8 @@ I usually develop this types of things myself, since I like to have full control
 
 I've also scraped the fonts from the live website, as I was looking around and it looks like it's a paid font. I hope you don't mind :P
 
+Oh, and even though it wasn't asked, I ended up adding Redux in the end, just so you know I can work with it ;)
+
 ### Tests
 
 Unfortunately this is one of my weak points. Tests were never a priority (or even a thing) at my past jobs so I never really got into it. I hope to cross that fault from my list soon by learning from people who actually care about this. As it stands, I've done the minimum by writing snapshot tests for the two main components of the app (SearchForm and VehicleCard).
