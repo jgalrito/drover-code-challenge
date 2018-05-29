@@ -82,3 +82,15 @@ export const SORTING_OPTIONS = [{
 }]
 
 export const DISTANCE_OPTIONS = [25, 50, 75, 100, 150, 200]
+
+export const DEFAULT_SEARCH_PARAMS = {
+  location: 'London, United Kingdom',
+  number_of_months: 12,
+  number_of_weeks: 52,
+  sortBy: SORTING_OPTIONS[0],
+  price_min: 100,
+  price_max: 2500,
+  vehicle_type: 'consumer',
+  subscription_start_days: SUBSCRIPTION_START_OPTIONS.consumer[2],
+  max_distance: DISTANCE_OPTIONS[1]
+}

@@ -48,7 +48,7 @@ const VEHICLE_TYPES = {
   PCO: 'Private-Hire'
 }
 
-class SearchForm extends Component {
+export class SearchForm extends Component {
   state = {
     refineSearch: false
   }

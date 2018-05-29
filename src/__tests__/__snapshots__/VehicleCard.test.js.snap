@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="vehicle-card sc-bwzfXH hHSxhc"
+>
+  <div
+    className="slide-show-container"
+  >
+    <div
+      className="vehicle-slide-show sc-htpNat kvSqaQ"
+    >
+      <div
+        className="slick-slider slick-initialized"
+        dir="ltr"
+      >
+        <img
+          alt="prev"
+          className="slide-arrow prev"
+          onClick={[Function]}
+          src="left_arrow.png"
+        />
+        <div
+          className="slick-list"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={null}
+          onMouseMove={null}
+          onMouseUp={[Function]}
+          onTouchCancel={null}
+          onTouchEnd={[Function]}
+          onTouchMove={null}
+          onTouchStart={[Function]}
+          style={
+            Object {
+              "padding": "0px 0px",
+            }
+          }
+        >
+          <div
+            className="slick-track"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            style={
+              Object {
+                "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                "WebkitTransition": "",
+                "msTransform": "translateX(0px)",
+                "opacity": 1,
+                "transform": "translate3d(0px, 0px, 0px)",
+                "transition": "",
+              }
+            }
+          >
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-2}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Front"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20710/main_Screen_Shot_2018-05-24_at_17.47.40.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-1}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Interior - Dashboard"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20711/main_Screen_Shot_2018-05-24_at_17.47.53.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active slick-center slick-current"
+              data-index={0}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Front right side"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20704/main_Screen_Shot_2018-05-24_at_17.45.49.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide"
+              data-index={1}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Back left side"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20709/main_Screen_Shot_2018-05-24_at_17.47.03.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide"
+              data-index={2}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Front"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20710/main_Screen_Shot_2018-05-24_at_17.47.40.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide"
+              data-index={3}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Interior - Dashboard"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20711/main_Screen_Shot_2018-05-24_at_17.47.53.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-center slick-cloned"
+              data-index={4}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Front right side"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20704/main_Screen_Shot_2018-05-24_at_17.45.49.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={5}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Back left side"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20709/main_Screen_Shot_2018-05-24_at_17.47.03.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={6}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Exterior - Front"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20710/main_Screen_Shot_2018-05-24_at_17.47.40.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={7}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <img
+                  alt="Interior - Dashboard"
+                  src="https://s3-eu-west-2.amazonaws.com/drover-public/uploads/image/image/20711/main_Screen_Shot_2018-05-24_at_17.47.53.jpg.png"
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          alt="next"
+          className="slide-arrow next"
+          onClick={[Function]}
+          src="left_arrow.png"
+        />
+      </div>
+    </div>
+    <img
+      alt="discount"
+      src="discount_tag.png"
+    />
+  </div>
+  <div
+    className="vehicle-info p-1 p-lg-0"
+  >
+    <div
+      className="vehicle-title pl-3"
+    >
+      <div
+        className="pb-1 pt-2"
+      >
+        <h3
+          className="vehicle-make-brand m-0"
+        >
+          Toyota Aygo X-Play 1.0L
+        </h3>
+        <span
+          className="vehicle-location"
+        >
+          Located in 
+          E14
+        </span>
+      </div>
+      <div
+        className="availability pr-3"
+      >
+        Available from 
+        8th June 2018
+      </div>
+    </div>
+    <div
+      className="key-facts py-1 px-2"
+    >
+      <ul>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="2014"
+            src="year.svg"
+          />
+          <span>
+            2014
+          </span>
+        </li>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="Hatchback"
+            src="body_type.svg"
+          />
+          <span>
+            Hatchback
+          </span>
+        </li>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="Manual"
+            src="transmission.svg"
+          />
+          <span>
+            Manual
+          </span>
+        </li>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="Petrol"
+            src="fuel_type.svg"
+          />
+          <span>
+            Petrol
+          </span>
+        </li>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="4 Seats"
+            src="seats.svg"
+          />
+          <span>
+            4 Seats
+          </span>
+        </li>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="5 Doors"
+            src="doors.svg"
+          />
+          <span>
+            5 Doors
+          </span>
+        </li>
+        <li
+          className="px-1 pb-1"
+        >
+          <img
+            alt="Silver"
+            src="color.svg"
+          />
+          <span>
+            Silver
+          </span>
+        </li>
+      </ul>
+    </div>
+    <ul
+      className="features py-1 px-2"
+    >
+      <li
+        className="pl-1 pr-1"
+      >
+        Bluetooth Connectivity
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        •
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        Air Conditioning
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        •
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        Upholstery Cloth
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        •
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        FM/AM Radio
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        •
+      </li>
+      <li
+        className="pl-1 pr-1"
+      >
+        Aux Input
+      </li>
+    </ul>
+    <div
+      className="pricing px-2 pb-2 pt-0 p-lg-2 p-xl-2 px-xl-3"
+    >
+      <div
+        className="discount-info"
+      >
+        <div>
+          <small
+            className="max-price"
+          >
+            was £
+            70
+            /month
+          </small>
+        </div>
+        <div>
+          <small>
+            (save £
+            20
+            /month)
+          </small>
+        </div>
+      </div>
+      <div
+        className="value-wrapper mr-lg-3 p-2 p-lg-0 mb-2 mb-lg-0"
+      >
+        <small
+          className="max-price"
+        >
+          £
+          70
+        </small>
+        <div
+          className="value"
+        >
+          <span
+            className="price text-xl-right"
+          >
+            £ 
+            50
+          </span>
+          /month
+        </div>
+        <small
+          className="periodicity"
+        >
+          (Monthly Vehicle Price inc. VAT)
+        </small>
+      </div>
+      <button
+        className="sc-bdVaJa hRfSQH"
+      >
+        See more details
+      </button>
+    </div>
+  </div>
+</div>
+`;

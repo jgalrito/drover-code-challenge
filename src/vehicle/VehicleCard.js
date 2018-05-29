@@ -69,7 +69,7 @@ const FEATURES = {
   upholstery_cloth: "Upholstery Cloth"
 }
 
-const VehicleCard = ({vehicle, isConsumer, totalPrice, discount}) => {
+export const VehicleCard = ({vehicle, isConsumer, totalPrice, discount}) => {
   const {
     images,
     vehicle_make,
